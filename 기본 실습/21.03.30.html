@@ -5,18 +5,18 @@
     </head>
     <body>
         <form action="http://localhost/color.php">
-            <h1>색상</h1>
-            <select name="color">
-                <option value="red">붉은색</option>
-                <option value="black">검은색</option>
-                <option value="blue">파란색</option>
-            </select>
-            <h1>색상2 (다중선택)</h1>
-            <select name="color2" multiple>
-                <option value="red">붉은색</option>
-                <option value="black">검은색</option>
-                <option value="blue">파란색</option>
-            </select>
+            <h1>색상(단일선택)</h1>
+            <p>
+                붉은색 : <input type="radio" name="color" value="red">
+                검은색 : <input type="radio" name="color" value="black">
+                파란색 : <input type="radio" name="color" value="blue">
+            </p>>
+            <p>
+                <h1>사이즈 (다중선택)</h1>
+                95 : <input type="checkbox" name="size" value="95">
+                100 : <input type="checkbox" name="size" value="100">
+                105 : <input type="checkbox" name="size" value="105">
+            </p>
             <input type="submit">
         </form>
     </body>
