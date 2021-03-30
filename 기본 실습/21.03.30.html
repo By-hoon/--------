@@ -4,9 +4,19 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <form action="">
-            <p>아이디 : <input type="text" name="id" value="default"></p>
-            <p>비밀번호 : <input type="password"></p>
+        <form action="http://localhost/color.php">
+            <h1>색상</h1>
+            <select name="color">
+                <option value="red">붉은색</option>
+                <option value="black">검은색</option>
+                <option value="blue">파란색</option>
+            </select>
+            <h1>색상2 (다중선택)</h1>
+            <select name="color2" multiple>
+                <option value="red">붉은색</option>
+                <option value="black">검은색</option>
+                <option value="blue">파란색</option>
+            </select>
             <input type="submit">
         </form>
     </body>
