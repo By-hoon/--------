@@ -3,18 +3,72 @@
     <head>
         <meta charset="utf-8">
         <style>
-            @media (max-width: 500px){
-                body{
-                    background-color: red;
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .container{
+                display: flex;
+                flex-direction: column;
+                width: 800px;
+                border: 1px solid gray;
+            }
+            header{
+                border-bottom: 1px solid gray;
+                padding-left: 20px;
+            }
+            footer{
+                border-top: 1px solid gray;
+                padding: 20px;
+                text-align: center;
+            }
+            .content{
+                display: flex;
+            }
+            @media(max-width:500px){
+                .content{
+                    flex-direction: column;
                 }
             }
-            @media (max-width: 600px){
-                body{
-                    background-color: green;
-                }
+            .content nav{
+                border-right: 1px solid gray;
+            }
+            .content aside{
+                border-left: 1px solid gray;
+            }
+            nav, aside{
+                flex-basis: 150px;
+                flex-shrink: 0;
+            }
+            main{
+                padding: 10px;
             }
         </style>
     </head>
     <body>
+        <div class="container">
+            <header>
+                <h1>배연훈</h1>
+            </header>
+            <section class="content">
+                <nav>
+                    <ul>
+                        <li>html</li>
+                        <li>css</li>
+                        <li>javascript</li>
+                    </ul>
+                </nav>
+                <main>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quod quo explicabo aperiam necessitatibus dolor odio suscipit obcaecati? At aliquid itaque nulla pariatur eius, quisquam optio vero possimus? Nesciunt tempore qui iste fugiat commodi repudiandae quis saepe magni similique, obcaecati consequatur consectetur voluptates non illo nihil, reiciendis minima ratione voluptate vel, molestias ipsum et laboriosam! Porro, dicta tempore itaque consequatur sed libero eligendi vel error iure adipisci? Reprehenderit, iure odit quibusdam totam itaque commodi iste, voluptatum autem esse excepturi nulla officia dignissimos quos aliquam? Eius porro veritatis adipisci cum. Adipisci, porro iure? Deleniti dignissimos odit odio assumenda incidunt molestiae adipisci aspernatur iusto sunt ipsum cupiditate dolorum impedit enim velit repudiandae unde labore quaerat dolores, ducimus neque nisi beatae similique nam temporibus. Praesentium, quia excepturi a dicta iusto asperiores ut aspernatur nam dolore minima vero blanditiis neque? Veniam amet voluptatem ipsa quia delectus, maxime nam consequatur eum perspiciatis quidem necessitatibus quae consequuntur aperiam impedit repellat dolores numquam facere. Nobis asperiores quaerat dolorem accusantium nostrum eum aperiam veritatis omnis, laudantium est quos numquam a obcaecati exercitationem maxime eos perferendis consequatur pariatur voluptate in officiis! Sint ratione in id, beatae, earum maiores neque saepe illum nisi quis totam eaque atque soluta eius adipisci itaque molestiae voluptates ullam. Assumenda sit rerum accusamus molestiae, in dolorem iste ipsa. Non maxime fugit nam porro adipisci optio. Itaque, quae labore nisi illum reiciendis officiis corporis placeat dolores aperiam non maiores obcaecati debitis minus qui, laborum nihil vel assumenda facere atque. Ullam illo sed facilis aspernatur, obcaecati ipsa possimus neque, fugit saepe odio laudantium rerum adipisci harum eligendi ut, voluptas minima ea doloremque. Laborum impedit sunt iure, ullam odit sint culpa reprehenderit quo, ratione eaque optio eum temporibus nesciunt velit iste saepe repellat hic vero ducimus quos inventore. Id iste assumenda ipsa! Provident, sed velit saepe expedita repellendus eius quidem libero ratione id? Consequatur nesciunt corporis expedita maxime repellat dolor adipisci tenetur, reprehenderit totam maiores quas omnis temporibus fugiat voluptatem. At sapiente porro aliquam quisquam, similique assumenda odit harum, vitae a tenetur numquam optio debitis iste. Facilis culpa, non animi repellendus sit ab quod maiores est adipisci ipsum rerum veniam quia dolores ut aperiam odit unde quaerat quis consectetur numquam mollitia deleniti corrupti debitis sunt! Doloribus pariatur minus, alias architecto ut reiciendis minima placeat corrupti ipsa odio vero aut odit molestiae velit dolorum delectus fugiat libero eius, accusantium voluptatibus. Reprehenderit consequatur quaerat voluptas sequi ipsa voluptate praesentium sed atque perferendis, aspernatur in eaque, unde dolor labore qui rem asperiores nam voluptatem eum vero totam. Ex nobis ea ducimus magni. Dignissimos assumenda dolorum, repellat minus ex totam doloremque vitae eligendi minima dicta rem consectetur labore sunt saepe fugiat qui. Ullam nostrum, veniam quos ea quas maiores minus neque quia nesciunt nam? Impedit recusandae, esse dignissimos eos reiciendis tempore iure, laboriosam at aut architecto minus dolorem! Laborum vitae doloremque perferendis nesciunt illum consectetur a magnam nihil eum aliquid praesentium veritatis alias, veniam quo rerum omnis quia vero officiis hic mollitia beatae qui labore! Cum dignissimos accusantium aut dolores, reprehenderit numquam?
+                </main>
+                <aside>
+                    AD
+                </aside>
+            </section>
+            <footer>
+                <a href="https://.com">홈페이지</a>
+            </footer>
+        </div>
     </body>
 </html>
