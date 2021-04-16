@@ -3,6 +3,13 @@
     <head>
         <meta charset="utf-8">
         <style>
+            *{
+                box-sizing: border-box;
+            }
+            .container{
+                width:540px;
+                border: 1px solid gray;
+            }
             header{
                 border-bottom: 1px solid gray;
             }
@@ -21,6 +28,8 @@
             aside{
                 float: left;
                 width:120px;
+                border-left: 1px solid gray;
+                margin-left: -1px;
             }
             footer{
                 clear:both;
@@ -31,27 +40,29 @@
         </style>
     </head>
     <body>
-        <header>
-            <h1>
-                CSS
-            </h1>
-        </header>
-        <nav>
-            <ul>
-                <li>position</li>
-                <li>float</li>
-                <li>flex</li>
-            </ul>
-        </nav>
-        <article>
-            <h2>float</h2>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur totam obcaecati quibusdam quasi molestias, quis enim amet ut magni architecto voluptatum atque quae porro expedita eos! Autem consequuntur vitae beatae ipsum laborum quam dolorem! Similique velit reiciendis et! Magni vitae sequi quas quia, incidunt commodi ab aliquam iste consectetur nobis?
-        </article>
-        <aside>
-            ad
-        </aside>
-        <footer>
-            copyleft
-        </footer>
+        <div class="container">
+            <header>
+                <h1>
+                    CSS
+                </h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>position</li>
+                    <li>float</li>
+                    <li>flex</li>
+                </ul>
+            </nav>
+            <article>
+                <h2>float</h2>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur totam obcaecati quibusdam quasi molestias, quis enim amet ut magni architecto voluptatum atque quae porro expedita eos! Autem consequuntur vitae beatae ipsum laborum quam dolorem! Similique velit reiciendis et! Magni vitae sequi quas quia, incidunt commodi ab aliquam iste consectetur nobis?
+            </article>
+            <aside>
+                ad
+            </aside>
+            <footer>
+                copyleft
+            </footer>
+        </div>
     </body>
 </html>
