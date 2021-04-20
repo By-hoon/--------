@@ -1,6 +1,8 @@
-function sayHello(name, age){
-    return `Hello ${name} you are ${age} years old`;
+const calculator = {
+ plus: function(a,b)   {
+     return a+b;
+ }
 }
 
-const greetYH = sayHello("YeunHun", 25);
-console.log(greetYH)
+const plus = calculator.plus(5,5)
+console.log(plus)
