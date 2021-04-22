@@ -1,12 +1,11 @@
-const title = document.querySelector("#title");
-
-const CLICKED_CLASS = "clicked";
-
-function handleClick(){
-  title.classList.toggle(CLICKED_CLASS);
+function handleResize() {
+  if (window.innerWidth <= 600) {
+    document.body.style.backgroundColor = "#3498db";
+  } else if (window.innerWidth > 600 && window.innerWidth < 800) {
+    document.body.style.backgroundColor = "#8e44ad";
+  } else {
+    document.body.style.backgroundColor = "#f1c40f";
+  }
 }
 
-function init(){
-  title.addEventListener("click", handleClick);
-}
-init();
+window.addEventListener("resize", handleResize);
