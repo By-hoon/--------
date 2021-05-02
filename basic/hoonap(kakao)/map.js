@@ -139,11 +139,11 @@ var areas = [
             new kakao.maps.LatLng(36.3016143323538,127.4548376238397)
         ]
     }, {
-        name : '종로구',
+        name : '서구',
         path : [
         ]
     }, {
-        name : '서대문구',
+        name : '유성구',
         path : [
         ]
     }
