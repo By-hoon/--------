@@ -3,12 +3,36 @@
 <head>
 	<meta charset="utf-8">
 	<title>다음 지도 API</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 	<div id="map" ></div>
+	<nav id="nav">
+		<div class="container">
+			<div class ="row">
+				<div class="nav" style = "display: none;">
+					<h2 class="ir_su">사이트 전체 메뉴</h2>
+					<div>
+						<h3>마커 설정</h3>
+						<ol>
+							<li><a href="addMarker.html" onclick="window.open(this.href,'_blank', 'width=600,height=400'); return false")">마커 추가</a></li>
+							<li><a href="#">마커 수정</a></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<a href="#" class="btn">
+		<i class="fa fa-angle-left" aria-hidden="true"></i>
+		<span class="ir_su">전체메뉴 보기</span>
+	</a>
 	<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=d9355f267cb6b45d2ef37bfcfa4f4a02"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="map.js"></script>
+	<script type="text/javascript" src="marker.js"></script>
+	<script type="text/javascript" src="menu.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </body>
 </html>
