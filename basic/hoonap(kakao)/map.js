@@ -200,6 +200,7 @@ let markerLat = [];
 const MARKERLAT_LS = 'markerLat'
 const STOPBTN_LS = 'stop';
 
+//불러온 값으로 마커 출력
 function printMarker(lat, lng){
     var imageSrc = 'KakaoTalk_20200623_145500408.JPG', 
     imageSize = new kakao.maps.Size(20, 20), 
@@ -214,6 +215,7 @@ var marker = new kakao.maps.Marker({
 marker.setMap(map);  
 }
 
+//배열에 저장된 값 불러오기
 function loadMarkers(){
     const loadMarkerLat = localStorage.getItem(MARKERLAT_LS);
     if(loadMarkerLat !== null){
@@ -224,6 +226,7 @@ function loadMarkers(){
     }
 }   
 
+//클릭 이벤트 마커 추가 부분
 function makeMarker(mouseEvent){
     var latlng = mouseEvent.latLng; 
     var imageSrc = 'KakaoTalk_20200623_145500408.JPG', // 마커이미지의 주소입니다    
