@@ -178,9 +178,9 @@ function displayArea(area) {
         fillOpacity: 0.7 
     });
 
-    // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다 
+    // 다각형에 mouseover 이벤트를 등록하고 이벤트가 발생하면 폴리곤의 채움색을 변경합니다
     // 지역명을 표시하는 커스텀오버레이를 지도위에 표시합니다
-    kakao.maps.event.addListener(polygon, 'mouseover', function(mouseEvent) {
+    kakao.maps.event.addListener(polygon, 'mouseover', function() {
         polygon.setOptions({fillColor: '#09f'});
         customOverlay.setMap(map);
     });
@@ -193,10 +193,38 @@ function displayArea(area) {
     }); 
 }
 
-function addMarker(){
-var cnt = 0;
+//----마커 추가 부분----------------------------------------------------------
+const stopBtn = document.querySelector(".stopBtn");
+let markerLat = [];
+
+const MARKERLAT_LS = 'markerLat'
+const STOPBTN_LS = 'stop';
+
+function printMarker(lat, lng){
+    var imageSrc = 'KakaoTalk_20200623_145500408.JPG', 
+    imageSize = new kakao.maps.Size(20, 20), 
+    imageOption = {offset: new kakao.maps.Point(10 , 20)}; 
+
+var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+    markerPosition = new kakao.maps.LatLng(lat, lng);
+var marker = new kakao.maps.Marker({
+  position: markerPosition,
+  image: markerImage 
+});
+marker.setMap(map);  
+}
+
+function loadMarkers(){
+    const loadMarkerLat = localStorage.getItem(MARKERLAT_LS);
+    if(loadMarkerLat !== null){
+        const parsedMarker = JSON.parse(loadMarkerLat);
+        parsedMarker.forEach(function(markerIn){
+            printMarker(markerIn.lat, markerIn.lng);
+        });
+    }
+}   
+
 function makeMarker(mouseEvent){
-    if(cnt === 0){
     var latlng = mouseEvent.latLng; 
     var imageSrc = 'KakaoTalk_20200623_145500408.JPG', // 마커이미지의 주소입니다    
     imageSize = new kakao.maps.Size(20, 20), // 마커이미지의 크기입니다
@@ -210,13 +238,36 @@ var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
 var marker = new kakao.maps.Marker({
   position: markerPosition,
   image: markerImage // 마커이미지 설정 
-
 });
-}
+
 // 마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);  
-cnt = 1;
-}
-kakao.maps.event.addListener(map, 'click', makeMarker);
 
+//찍은 마커 정보 배열에 저장
+const markerLatobj = {
+    lat : latlng.getLat(),
+    lng : latlng.getLng()
+} ;
+ markerLat.push(markerLatobj);
+ saveMarkerLat();
 }
+
+function addMarker(){
+    kakao.maps.event.addListener(map, 'click', makeMarker);
+    stopBtn.classList.remove(STOPBTN_LS);
+}
+
+function stopAdd(){
+    kakao.maps.event.removeListener(map, 'click', makeMarker);
+    stopBtn.classList.add(STOPBTN_LS);
+}
+
+function saveMarkerLat(){
+    localStorage.setItem(MARKERLAT_LS, JSON.stringify(markerLat));
+}
+
+function init(){
+    loadMarkers();
+}
+
+init();
