@@ -206,6 +206,10 @@ var areas = [
         name : '유성구',
         path : [
         ]
+    },{
+        name : '중구',
+        path : [
+        ]
     }
 ];
 
