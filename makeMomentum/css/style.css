@@ -1,16 +1,13 @@
-body{
-    color: #34495e;
+span{
+    z-index: 1;
 }
 
-.form,
-.greetings {
-    display:none;
+img{
+    position: absolute;
+    width: 100%;
+    height: 90hz;
+    z-index: 0;
 }
-
-.showing{
-    display: block;
-}
-
 .hidden{
     display: none;
 }
