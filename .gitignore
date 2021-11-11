@@ -31,3 +31,5 @@ yarn-error.log*
 /.ico
 /.png
 /.txt
+
+basic-typescript//public
