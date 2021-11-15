@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { Routes, Route, useLocation, useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -141,11 +140,11 @@ function Coin() {
     const coinId = params.coinId;
 
     const location = useLocation()
+    const state = location.state as RouteState;
+
     const pathname = location.pathname;
     const priceMatch = (pathname === `/${coinId}/price`);
     const chartMatch = (pathname === `/${coinId}/chart`);
-    console.log(priceMatch);
-    const state = location.state as RouteState;
 
     const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>(
         ["info", coinId],
@@ -202,7 +201,7 @@ function Coin() {
                         </Tab>
                     </Tabs>
                     <Routes>
-                        <Route path="chart" element={<Chart />} />
+                        <Route path="chart" element={<Chart coinId={coinId} />} />
                         <Route path="price" element={<Price />} />
                     </ Routes>
                 </>
