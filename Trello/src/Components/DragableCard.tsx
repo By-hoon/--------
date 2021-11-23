@@ -14,10 +14,9 @@ interface IDragabbleCardProps {
     index: number;
 }
 
-function DragabbleCard({ toDo, index }: IDragabbleCardProps) {
-    console.log(toDo, "has been rendered");
+function DragableCard({ toDo, index }: IDragabbleCardProps) {
     return (
-        <Draggable key={toDo} draggableId={toDo} index={index}>
+        <Draggable draggableId={toDo} index={index}>
             {(magic) => (
                 <Card
                     ref={magic.innerRef}
@@ -31,4 +30,4 @@ function DragabbleCard({ toDo, index }: IDragabbleCardProps) {
     );
 }
 
-export default React.memo(DragabbleCard);
+export default React.memo(DragableCard);
